@@ -15,6 +15,8 @@ Autoren: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de), [Erik Dwornik](mailto:
   - [JSON Server](#json-server)
   - [Camunda Run](#camunda-run)
   - [Camunda Modeler](#camunda-modeler)
+- [Nutzung](#nutzung)
+  - [Camunda starten](#camunda-starten)
 
 - [Sonstiges](#sonstiges)
   - [Node Bestpractices](#node-bestpractices)
@@ -67,6 +69,20 @@ Autoren: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de), [Erik Dwornik](mailto:
 - Hier geht es zum Download vom [Camunda Modeler](https://downloads.camunda.cloud/release/camunda-modeler/5.5.1/camunda-modeler-5.5.1-win-x64.zip)
 
 ---
+
+## Nutzung
+
+### Camunda starten
+
+Camunda Run
+- Ins Verzeichnis navigieren, indem _Camunda Run_ installiert wurde
+  - _start.bat_ ausführen
+
+Camunda Modeler
+- Ins Verzeichnis navigieren, indem _Camunda Modeler_ installiert wurde
+  - _Camunda Modeler.exe_ ausführen
+
+
 
 
 
