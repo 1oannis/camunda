@@ -11,13 +11,6 @@ Autoren: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de), [Erik Dwornik](mailto:
 ## Inhalt
 - [Vorbereitung der Installation](#vorbereitung-der-installation)
 - [Node Best Practices](#node-best-practices)
-- [Node Modules](#node-modules)
-
----
-
-## Node Best Practices
-
-Sehr empfehlenswert ist https://github.com/goldbergyoni/nodebestpractices
 
 ---
 
@@ -47,3 +40,5 @@ Sehr empfehlenswert ist https://github.com/goldbergyoni/nodebestpractices
 
 
 
+
+Sehr empfehlenswert ist https://github.com/goldbergyoni/nodebestpractices
