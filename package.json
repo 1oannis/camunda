@@ -1,0 +1,20 @@
+{
+  "name": "sendletterworker",
+  "version": "1.0.0",
+  "description": "Example",
+  "author": "Ioannis Theodosiadis",
+  "private": true,
+  "license": "GPL-3.0",
+  "exports": "./sendLetterWorker.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.11.0",
+    "npm": ">=8.19.2"
+  },
+  "scripts": {
+    "start": "node ./src/rest/get.controller.js"
+  },
+  "dependencies": {
+    "camunda-external-task-client-js": "3.0.0-alpha1"
+  }
+}
