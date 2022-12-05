@@ -13,7 +13,6 @@ Autoren: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de), [Erik Dwornik](mailto:
   - [Inhalt](#inhalt)
   - [Vorbereitung der Installation](#vorbereitung-der-installation)
   - [Node Best Practices](#node-best-practices)
-  - [Testüberschrifts](#testüberschrifts)
 
 ---
 
@@ -34,5 +33,3 @@ Autoren: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de), [Erik Dwornik](mailto:
 ## Node Best Practices
 
 Sehr empfehlenswert ist https://github.com/goldbergyoni/nodebestpractices
-
-## Testüberschrifts
