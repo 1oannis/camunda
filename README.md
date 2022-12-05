@@ -1,4 +1,4 @@
-# FICK EUCH ALLE
+# Hinweise zum Projekt
 <!--
   Copyright (C) 2022 - present Ioannis Theodosiadis, Hochschule Karlsruhe
 -->
