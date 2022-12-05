@@ -17,6 +17,8 @@ Autoren: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de), [Erik Dwornik](mailto:
   - [Camunda Modeler](#camunda-modeler)
 - [Nutzung](#nutzung)
   - [Camunda starten](#camunda-starten)
+  - [JSON-Server starten](#json-server-starten)
+  - [Worker starten](#worker-starten)
 
 - [Sonstiges](#sonstiges)
   - [Node Bestpractices](#node-bestpractices)
@@ -82,10 +84,18 @@ Camunda Modeler
 - Ins Verzeichnis navigieren, indem _Camunda Modeler_ installiert wurde
   - _Camunda Modeler.exe_ ausführen
 
+### JSON-Server starten
+- Folgengen Befehl im Ordner ausführen, indem die _db.json_ liegt
+```powershell
+    json-server --watch db.json
+```
 
+### Worker starten
 
-
-
+- Im Projektverzeichnis folgenden Befehl ausführen
+```powershell
+    npm start
+```
 
 
 
