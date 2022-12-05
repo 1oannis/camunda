@@ -1,4 +1,4 @@
-# Hinweise zum Prozess-Worker
+# Hinweise zum Projekt
 <!--
   Copyright (C) 2022 - present Ioannis Theodosiadis, Hochschule Karlsruhe
 -->
@@ -12,7 +12,9 @@ Autoren: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de), [Erik Dwornik](mailto:
 - [Vorbereitung der Installation](#vorbereitung-der-installation)
 - [Installation](#installation)
   - [Node Modules](#node-modules)
+  - [JSON Server](#json-server)
   - [Camunda Run](#camunda-run)
+  - [Camunda Modeler](#camunda-modeler)
 
 - [Sonstiges](#sonstiges)
   - [Node Bestpractices](#node-bestpractices)
@@ -37,18 +39,36 @@ Autoren: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de), [Erik Dwornik](mailto:
 
 ### Node Modules
 
-- Der _camunda-external-task-client-js_ im Projekt-Verzeichnis heruntergeladen.
+- Die aktuelle Version von [NodeJS v19.2.0](https://nodejs.org/download/release/v19.2.0/node-v19.2.0-win-x64.zip) als ZIP
+  - Die neue Version einfach in den Ordner _node_ Ordner entpacken
+
+- Den _camunda-external-task-client-js_ im Projekt-Verzeichnis heruntergeladen.
   ```powershell
       npm i
   ```
 
+### JSON Server
+
+- Um die _db.json_ für die Rest-API von _Camunda_ erreichbar zu machen, müssen wir diese z.B. in _json-server_ laden
+- Infos hierzu gibt es bei https://github.com/typicode/json-server#getting-started
+  - Einfach im Installationsverzeichnis 
+  ```powershell
+      npm install -g json-server
+  ```
+  - Die _db.json_ muss in dem Verzeichnis liegen, indem später der Server gestartet wird
 ### Camunda Run
 
-- Für _Camunda Platform 7 Run_ wird JDK 15 Benötigt
+- Für _Camunda Platform 7 Run_ wird JDK 15 benötigt
   - Hier bei _Oracle_ erhältlich für Win x64[JDK 15.0.2](https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html#license-lightbox)
 - Hier geht es zum Download von [Camunda Platform 7 Run](https://downloads.camunda.cloud/release/camunda-bpm/run/7.18/camunda-bpm-run-7.18.0.zip)
 
-## 
+### Camunda Modeler
+
+- Hier geht es zum Download vom [Camunda Modeler](https://downloads.camunda.cloud/release/camunda-modeler/5.5.1/camunda-modeler-5.5.1-win-x64.zip)
+
+---
+
+
 
 
 
