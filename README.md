@@ -61,7 +61,7 @@ Autoren: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de), [Erik Dwornik](mailto:
 ### Camunda Run
 
 - Für _Camunda Platform 7 Run_ wird JDK 15 benötigt
-  - Hier bei _Oracle_ erhältlich für Win x64[JDK 15.0.2](https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html#license-lightbox)
+  - Hier bei _Oracle_ erhältlich für Win x64 [JDK 15.0.2](https://www.oracle.com/java/technologies/javase/jdk15-archive-downloads.html#license-lightbox)
 - Hier geht es zum Download von [Camunda Platform 7 Run](https://downloads.camunda.cloud/release/camunda-bpm/run/7.18/camunda-bpm-run-7.18.0.zip)
 
 ### Camunda Modeler
