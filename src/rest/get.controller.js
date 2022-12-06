@@ -27,6 +27,7 @@ client.subscribe("GetCustomer", async function({ task, taskService }) {
     if(text.includes("prename")) {
       await taskService.complete(task, processVariables);
     }
+    throw 'CUSTOMER_DOES_NOT_EXIST';
   }
     ).catch(async (error)=>{
       await taskService.handleBpmnError(task, "CUSTOMER_DOES_NOT_EXIST", "ex", error);
