@@ -12,8 +12,8 @@
     "npm": ">=8.19.2"
   },
   "scripts": {
-    "startGet": "node ./src/rest/get.controller.js",
-    "startPost": "node ./src/rest/write.controller.js"
+    "startGet": "node ./src/Beispiele/get.controller.js",
+    "startPost": "node ./src/Beispiele/write.controller.js"
   },
   "dependencies": {
     "camunda-external-task-client-js": "3.0.0-alpha1"
