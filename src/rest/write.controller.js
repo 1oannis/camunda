@@ -9,9 +9,9 @@ const client = new Client(config);
 
 // susbscribe to the topic 'CreateCustomer' mentioned in the model
 client.subscribe("CreateCustomer", async function({ task, taskService }) {
-  const prename = task.variables.get("prenameInput")
-  const surname = task.variables.get("surenameInput")
-  const income = task.variables.get("incomeInput")
+  const prename = task.variables.get("prename")
+  const surname = task.variables.get("surename")
+  const income = task.variables.get("income")
   console.log(`** Creating Customer **`)
 
   fetch(`http://localhost:3000/customers`, {
@@ -20,7 +20,7 @@ client.subscribe("CreateCustomer", async function({ task, taskService }) {
         'Accept': 'application/json',
     },
     body: {
-      id: 12,
+      id: 11,
       prename,
       surname,
       creditRating: "C",
@@ -33,10 +33,11 @@ client.subscribe("CreateCustomer", async function({ task, taskService }) {
     console.log(code)
 
     if(code == 201) {
-      
+
       await taskService.complete(task, processVariables);
+    }else{
+      throw 'CREATE_FAILED';
     }
-    throw 'CREATE_FAILED';
   }
     ).catch(async (error)=>{
       await taskService.handleBpmnError(task, "CREATE_FAILED", error);
