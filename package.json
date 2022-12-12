@@ -8,8 +8,8 @@
   "exports": "./sendLetterWorker.js",
   "type": "module",
   "engines": {
-    "node": ">=18.11.0",
-    "npm": ">=8.19.2"
+    "node": ">=19.2.0",
+    "npm": ">=9.2.0"
   },
   "scripts": {
     "startGet": "node ./src/rest/customer-get.controller.js",
