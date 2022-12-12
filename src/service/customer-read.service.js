@@ -1,8 +1,4 @@
-
-
-export class CustomerReadService {
-
-  async findCustomerByName(prename, surname){
+export async function findCustomerByName(prename, surname) {
     console.log(`** Searching Customer with id:: ${customerId} **`)
     fetch(`http://localhost:3000/customers?prename=${prename}&surname=${surname}`, {
         method: 'GET',
@@ -26,4 +22,3 @@ export class CustomerReadService {
       await taskService.handleBpmnError(task, "CUSTOMER_DOES_NOT_EXIST", error);
     });
   }
-}
