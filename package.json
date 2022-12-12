@@ -12,7 +12,7 @@
     "npm": ">=8.19.2"
   },
   "scripts": {
-    "startGet": "node ./src/Beispiele/get.controller.js",
+    "startGet": "node ./src/rest/customer-get.controller.js",
     "startPost": "node ./src/Beispiele/write.controller.js"
   },
   "dependencies": {
