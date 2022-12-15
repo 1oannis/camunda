@@ -8,29 +8,42 @@ const config = { baseUrl: "http://localhost:8080/engine-rest", use: logger };
 const client = new Client(config);
 
 // susbscribe to the topic 'GetCustomer' mentioned in the model
-client.subscribe("GetCustomer", async function({ task, taskService }) {
-  const customerId = task.variables.get("id")
-  console.log(`** Searching Customer with id:: ${customerId} **`)
+client.subscribe("GetCustomer", 
+  async function({ task, taskService }) {
+    const taskPrename = task.variables.get("prename")
+    const taskSurname = task.variables.get("surname")
+    
+    console.log(`** Searching Customer:: ${taskPrename} ${taskSurname} **`)
 
-  fetch(`http://localhost:3000/customers?id=${customerId}`, {
-    method: 'GET',
-    headers: {
-        'Accept': 'application/json',
-    },
-  })
-  .then(response => response.text())
-  .then(async (text)=> {
-    console.log(text)
-    const processVariables = new Variables()
-    processVariables.set("customer", text)
-
-    if(text.includes("prename")) {
+    fetch(`http://localhost:3000/customers?prename=${taskPrename}&surname=${taskSurname}`, {
+      method: 'GET',
+      headers: {
+          'Accept': 'application/json',
+      },
+    })
+    .then((response) => {
+      if(!response.ok) {
+        throw new Error("Network response was not OK");
+      }
+      return response.json();
+    })
+    .then(async (data)=> {
+      let customer = data[0]
+      console.log(data[0])
+      const {id, creditRating, income, bankLoans} = customer
+      console.log(`** Found matching Customer with ID:: ${id}`)
+      const processVariables = new Variables()
+      processVariables.set("id", id)
+      // processVariables.set("surname", surname)
+      // processVariables.set("creditRating", creditRating)
+      // processVariables.set("income", income)
+      // processVariables.set("bankLoans", bankLoans)
+      
       await taskService.complete(task, processVariables);
-    }else{
-      throw 'CUSTOMER_DOES_NOT_EXIST';
-    }
-  }
-    ).catch(async (error)=>{
-      await taskService.handleBpmnError(task, "CUSTOMER_DOES_NOT_EXIST", error);
+    })
+    .catch(async (error)=> {
+      console.error("An error has occured with the fetch operation:", error);
+      await taskService.handleBpmnError(task, "CUSTOMER_NOT_FOUND")
     });
-});
+  }
+)
