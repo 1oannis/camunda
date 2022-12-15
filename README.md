@@ -2,8 +2,7 @@
 <!--
   Copyright (C) 2022 - present Ioannis Theodosiadis, Hochschule Karlsruhe
 -->
-Autoren: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de), [Erik Dwornik](mailto:dwer1011@h-ka.de),
-[Jan Riesterer](mailto:rija1027@h-ka.de), [Tugba Güneysu](mailto:gutu1011@h-ka.de)
+Autor: [Ioannis Theodosiadis](mailto:thio1011@h-ka.de)
 
 > Diese Datei ist in Markdown geschrieben und kann mit `<Strg><Shift>v` in
 > Visual Studio Code leicht gelesen werden.
@@ -94,7 +93,7 @@ Camunda Modeler
 
 - Im Projektverzeichnis folgenden Befehl ausführen
 ```powershell
-    npm start
+    npm run get
 ```
 
 
