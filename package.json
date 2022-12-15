@@ -12,7 +12,7 @@
     "npm": ">=9.2.0"
   },
   "scripts": {
-    "beispielGet": "node ./src/Beispiele/customer-get.controller.js",
+    "beispielGet": "node ./src/Beispiele/get.controller.js",
     "beispielPost": "node ./src/Beispiele/write.controller.js"
   },
   "dependencies": {
