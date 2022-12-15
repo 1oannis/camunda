@@ -92,10 +92,14 @@ Camunda Modeler
 ### Worker starten
 
 - Im Projektverzeichnis folgenden Befehl ausführen
-```powershell
-    npm run get
-```
-
+  - Für das Suchen eines Kunden
+  ```powershell
+      npm run get
+  ```
+  - Für das Anlegen eines Kunden
+  ```powershell
+      npm run post
+  ```
 
 
 ## Sonstiges
