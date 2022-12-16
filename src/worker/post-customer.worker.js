@@ -1,4 +1,4 @@
-import { Client, logger, Variables } from "camunda-external-task-client-js"
+import { Client, logger, Variables } from "camunda-external-task-client-js";
 // configuration for the Client:
 //  - 'baseUrl': url to the Process Engine
 //  - 'logger': utility to automatically log important events
@@ -8,16 +8,16 @@ const config = { baseUrl: "http://localhost:8080/engine-rest", use: logger };
 const client = new Client(config);
 
 // susbscribe to the topic 'CreateCustomer' mentioned in the model
-client.subscribe("CreateCustomer", async function({ task, taskService }) {
-  const prename = task.variables.get("prename")
-  const surname = task.variables.get("surename")
-  const income = task.variables.get("income")
-  console.log(`** Creating Customer **`)
+client.subscribe("CreateCustomer", async function ({ task, taskService }) {
+  const prename = task.variables.get("prename");
+  const surname = task.variables.get("surename");
+  const income = task.variables.get("income");
+  console.log(`** Creating Customer **`);
 
   fetch(`http://localhost:3000/customers`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-        'Accept': 'application/json',
+      Accept: "application/json",
     },
     body: {
       id: 11,
@@ -25,21 +25,20 @@ client.subscribe("CreateCustomer", async function({ task, taskService }) {
       surname,
       creditRating: "C",
       income,
-      bankLoans: 0
-    }
+      bankLoans: 0,
+    },
   })
-  .then(response => response.code())
-  .then(async (code)=> {
-    console.log(code)
+    .then((response) => response.code())
+    .then(async (code) => {
+      console.log(code);
 
-    if(code == 201) {
-
-      await taskService.complete(task, processVariables);
-    }else{
-      throw 'CREATE_FAILED';
-    }
-  }
-    ).catch(async (error)=>{
+      if (code == 201) {
+        await taskService.complete(task, processVariables);
+      } else {
+        throw "CREATE_FAILED";
+      }
+    })
+    .catch(async (error) => {
       await taskService.handleBpmnError(task, "CREATE_FAILED", error);
     });
 });
