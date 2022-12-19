@@ -23,7 +23,7 @@ client.subscribe("CreateCustomer", async function ({ task, taskService }) {
     bankLoans,
   };
 
-  console.log(`** Creating Customer **`);
+  console.log("** Creating Customer");
 
   fetch(`http://localhost:3000/customers`, {
     method: "POST",
