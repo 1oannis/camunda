@@ -35,15 +35,13 @@ client.subscribe("GetCustomer", async function ({ task, taskService }) {
         throw new Error("Customer not found");
       }
       let customer = data[0];
-      console.log(data[0]);
       const { id, creditRating, income, bankLoans } = customer;
       console.log("Found matching Customer: ", customer);
       const processVariables = new Variables();
       processVariables.set("id", id);
-      // processVariables.set("surname", surname)
-      // processVariables.set("creditRating", creditRating)
-      // processVariables.set("income", income)
-      // processVariables.set("bankLoans", bankLoans)
+      processVariables.set("creditRating", creditRating)
+      processVariables.set("income", income)
+      processVariables.set("bankLoans", bankLoans)
 
       await taskService.complete(task, processVariables);
     })
