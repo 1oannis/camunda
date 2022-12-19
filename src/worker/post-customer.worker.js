@@ -10,35 +10,36 @@ const client = new Client(config);
 // susbscribe to the topic 'CreateCustomer' mentioned in the model
 client.subscribe("CreateCustomer", async function ({ task, taskService }) {
   const prename = task.variables.get("prename");
-  const surname = task.variables.get("surename");
+  const surname = task.variables.get("surname");
+  const creditRating = task.variables.get("creditRating");
   const income = task.variables.get("income");
+  const bankLoans = task.variables.get("bankLoans");
+
+  const data = {
+    prename,
+    surname,
+    creditRating,
+    income,
+    bankLoans,
+  };
+
   console.log(`** Creating Customer **`);
 
   fetch(`http://localhost:3000/customers`, {
     method: "POST",
     headers: {
-      Accept: "application/json",
+      "Content-Type": "application/json",
     },
-    body: {
-      id: 11,
-      prename,
-      surname,
-      creditRating: "C",
-      income,
-      bankLoans: 0,
-    },
+    body: JSON.stringify(data),
   })
-    .then((response) => response.code())
-    .then(async (code) => {
-      console.log(code);
+    .then((response) => response.json())
+    .then(async (data) => {
+      console.log("Success:", data);
 
-      if (code == 201) {
-        await taskService.complete(task, processVariables);
-      } else {
-        throw "CREATE_FAILED";
-      }
+      await taskService.complete(task);
     })
     .catch(async (error) => {
-      await taskService.handleBpmnError(task, "CREATE_FAILED", error);
+      console.error("An error has occured with the fetch operation:", error);
+      await taskService.handleBpmnError(task, "CUSTOMER_NOT_CREATED");
     });
 });
