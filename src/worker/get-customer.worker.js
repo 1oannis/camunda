@@ -9,13 +9,13 @@ const client = new Client(config);
 
 // susbscribe to the topic 'GetCustomer' mentioned in the model
 client.subscribe("GetCustomer", async function ({ task, taskService }) {
-  const taskPrename = task.variables.get("prename");
-  const taskSurname = task.variables.get("surname");
+  const prename = task.variables.get("prename");
+  const surname = task.variables.get("surname");
 
-  console.log(`** Searching Customer:: ${taskPrename} ${taskSurname} **`);
+  console.log("** Searching Customer: ", prename, surname);
 
   fetch(
-    `http://localhost:3000/customers?prename=${taskPrename}&surname=${taskSurname}`,
+    `http://localhost:3000/customers?prename=${prename}&surname=${surname}`,
     {
       method: "GET",
       headers: {
@@ -25,18 +25,19 @@ client.subscribe("GetCustomer", async function ({ task, taskService }) {
   )
     .then((response) => {
       if (!response.ok) {
+        console.error("Network response was not OK", response.code())
         throw new Error("Network response was not OK");
       }
       return response.json();
     })
     .then(async (data) => {
-      if (data == undefined) {
+      if (data[0] == undefined) {
         throw new Error("Customer not found");
       }
       let customer = data[0];
       console.log(data[0]);
       const { id, creditRating, income, bankLoans } = customer;
-      console.log(`** Found matching Customer with ID:: ${id}`);
+      console.log("Found matching Customer: ", customer);
       const processVariables = new Variables();
       processVariables.set("id", id);
       // processVariables.set("surname", surname)
