@@ -83,10 +83,10 @@ Camunda Modeler
 - Ins Verzeichnis navigieren, indem _Camunda Modeler_ installiert wurde
   - _Camunda Modeler.exe_ ausführen
 
-### JSON-Server starten
-- Folgengen Befehl im Ordner ausführen, indem die _db.json_ liegt
+### JSON-Server als DB starten
+- Im Projektverzeichnis folgenden Befehl ausführen
 ```powershell
-    json-server --watch db.json
+    npm run db
 ```
 
 ### Worker starten
