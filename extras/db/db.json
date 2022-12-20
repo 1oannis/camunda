@@ -1,0 +1,84 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "prename": "Callie",
+      "surname": "Oliver",
+      "creditRating": "A",
+      "income": 80000,
+      "bankLoans": 15000
+    },
+    {
+      "id": 2,
+      "prename": "Colleen",
+      "surname": "Alford",
+      "creditRating": "C",
+      "income": 15000,
+      "bankLoans": 10000
+    },
+    {
+      "id": 3,
+      "prename": "Keefe",
+      "surname": "Williams",
+      "creditRating": "A",
+      "income": 65000,
+      "bankLoans": 0
+    },
+    {
+      "id": 4,
+      "prename": "Elmo",
+      "surname": "Garza",
+      "creditRating": "B",
+      "income": 30000,
+      "bankLoans": 0
+    },
+    {
+      "id": 5,
+      "prename": "Dennis",
+      "surname": "Holloway",
+      "creditRating": "C",
+      "income": 4500,
+      "bankLoans": 1000
+    },
+    {
+      "id": 6,
+      "prename": "Noel",
+      "surname": "Reyes",
+      "creditRating": "A",
+      "income": 90000,
+      "bankLoans": 30000
+    },
+    {
+      "id": 7,
+      "prename": "Fatima",
+      "surname": "Diaz",
+      "creditRating": "C",
+      "income": 0,
+      "bankLoans": 0
+    },
+    {
+      "id": 8,
+      "prename": "Hedley",
+      "surname": "Cotton",
+      "creditRating": "C",
+      "income": 12000,
+      "bankLoans": 5000
+    },
+    {
+      "id": 9,
+      "prename": "Quin",
+      "surname": "Aguirre",
+      "creditRating": "A",
+      "income": 250000,
+      "bankLoans": 50000
+    },
+    {
+      "id": 10,
+      "prename": "Noel",
+      "surname": "Short",
+      "creditRating": "B",
+      "income": 45000,
+      "bankLoans": 10000
+    }
+  ]
+}
