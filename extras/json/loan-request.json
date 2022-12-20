@@ -1,0 +1,20 @@
+{
+  "variables": {
+    "prename": {
+      "value": "Quin",
+      "type": "String"
+    },
+    "surname": {
+      "value": "Aguirre",
+      "type": "String"
+    },
+    "loanVolume": {
+      "value": 20000,
+      "type": "Integer"
+    },
+    "loanTerm": {
+      "value": 12,
+      "type": "Integer"
+    }
+  }
+}
