@@ -8,4 +8,21 @@ const config = { baseUrl: "http://localhost:8080/engine-rest", use: logger };
 const client = new Client(config);
 
 // susbscribe to the topic 'GetCustomer' mentioned in the model
-client.subscribe("SendResult", async function ({ task, taskService }) {});
+client.subscribe("SendResult", async function ({ task, taskService }) {
+  const prename = task.variables.get("prename");
+  const surname = task.variables.get("surname");
+  const approved = task.variables.get("approved");
+
+  if (approved==false) {
+    console.log()
+    await taskService.complete(task);
+  }
+
+  
+  const interestRate = task.variables.get("interestRate");
+  const loanVolume = task.variables.get("loanVolume");  
+
+
+  console.log("** Sending Result: ", approved);
+
+});
