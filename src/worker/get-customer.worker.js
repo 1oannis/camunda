@@ -25,7 +25,7 @@ client.subscribe("GetCustomer", async function ({ task, taskService }) {
   )
     .then((response) => {
       if (!response.ok) {
-        console.error("Network response was not OK", response.code())
+        console.error("Network response was not OK", response.code());
         throw new Error("Network response was not OK");
       }
       return response.json();
@@ -39,9 +39,9 @@ client.subscribe("GetCustomer", async function ({ task, taskService }) {
       console.log("Found matching Customer: ", customer);
       const processVariables = new Variables();
       processVariables.set("id", id);
-      processVariables.set("creditRating", creditRating)
-      processVariables.set("income", income)
-      processVariables.set("bankLoans", bankLoans)
+      processVariables.set("creditRating", creditRating);
+      processVariables.set("income", income);
+      processVariables.set("bankLoans", bankLoans);
 
       await taskService.complete(task, processVariables);
     })
