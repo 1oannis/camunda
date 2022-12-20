@@ -8,13 +8,15 @@
   "exports": "./sendLetterWorker.js",
   "type": "module",
   "engines": {
-    "node": ">=19.2.0",
+    "node": ">=19.3.0",
     "npm": ">=9.2.0"
   },
   "scripts": {
+    "db": "json-server --watch ./extras/db/db.json",
     "get": "node ./src/worker/get-customer.worker.js",
     "post": "node ./src/worker/post-customer.worker.js",
-    "db": "json-server --watch ./extras/db/db.json"
+    "result": "node ./src/worker/send-result.worker.js",
+    "start": "npm run db && npm run get && npm run post"
   },
   "dependencies": {
     "camunda-external-task-client-js": "3.0.0-alpha1"
