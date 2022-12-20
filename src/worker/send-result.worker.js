@@ -13,16 +13,18 @@ client.subscribe("SendResult", async function ({ task, taskService }) {
   const surname = task.variables.get("surname");
   const approved = task.variables.get("approved");
 
-  if (Boolean(approved) == false) {
-    console.log(`The loan application for ${prename} ${surname} was rejected`);
+  if (approved == false) {
+    console.log(`The loan application for ${prename} ${surname} was rejected.`);
     await taskService.complete(task);
+    return;
   }
 
   const interestRate = task.variables.get("interestRate");
   const loanVolume = task.variables.get("loanVolume");
 
-  console.log(`The loan application for ${prename} ${surname} was approved. 
-    \n Interest Rate: ${interestRate} \n Loan Volume: ${loanVolume} `);
+  console.log(
+    `The loan application for ${prename} ${surname} was approved. \n Interest Rate: ${interestRate}% \n Loan Volume: ${loanVolume} `
+  );
 
   await taskService.complete(task);
 });
