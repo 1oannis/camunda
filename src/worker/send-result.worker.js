@@ -1,4 +1,4 @@
-import { Client, logger, Variables } from "camunda-external-task-client-js";
+import { Client, logger } from "camunda-external-task-client-js";
 // configuration for the Client:
 //  - 'baseUrl': url to the Process Engine
 //  - 'logger': utility to automatically log important events
