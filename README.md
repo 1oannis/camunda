@@ -100,6 +100,10 @@ Camunda Modeler
   ```powershell
       npm run post
   ```
+  - Für das Versender der Bearbeiteten Anfrage
+  ```powershell
+      npm run result
+  ```
 
 
 ## Sonstiges
