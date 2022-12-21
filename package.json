@@ -15,8 +15,7 @@
     "db": "json-server --watch ./extras/db/db.json",
     "get": "node ./src/worker/get-customer.worker.js",
     "post": "node ./src/worker/post-customer.worker.js",
-    "result": "node ./src/worker/send-result.worker.js",
-    "start": "npm run db && npm run get && npm run post"
+    "result": "node ./src/worker/send-result.worker.js"
   },
   "dependencies": {
     "camunda-external-task-client-js": "3.0.0-alpha1"
